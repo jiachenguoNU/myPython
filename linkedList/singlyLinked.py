@@ -8,7 +8,10 @@ class ListNode:
 
 tail = ListNode(None)
 head = ListNode(1)
-head.next = ListNode(2)
+node2 = ListNode(2)
+head.next = node2
+print(id(head.next), id(node2), (head.next) is (node2))
+print(head.next, node2)
 head.next.next = ListNode(3)
 head.next.next.next = ListNode(4)
 head.next.next.next.next = tail
@@ -22,7 +25,7 @@ else:
     # Traverse until the *next* node is None
     while current.next:
         current = current.next
-        print(f"current val is {current.val}, The next node is: {current.next}")
+        print(f"current val is {current.val}")
 
     # Now, 'current' is the last node
     

@@ -1,7 +1,14 @@
-dict ={"a": 1, "b": 2, "c": 3}
+a ={"a": 1, "b": 2, "c": 3}
 
-print(max(dict.keys()))
+print(len(a))
 
-a = "a" not in dict  # True
+print(max(a.keys()))
+
+a = "a" not in a # False
 
 print(a)
+
+b = dict(name="JC", age = 5)
+print(b)
+
+print(b[0])
