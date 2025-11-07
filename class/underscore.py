@@ -5,9 +5,15 @@ class UnderScore:
 
     def card(self):
         return print(f"name: {self.name}, hometown: {self.__hometown}")
+    
+    def set_att(self, home_town):
+        self.__hometown = home_town
 
 
 
 card0 = UnderScore("John", "New York")
-print(card0.name)  # Output: John
+card0.card()
+card0.set_att('Chicago')
+card0.card()
+
 print(card0.__hometown)  # Output: AttributeError: 'UnderScore' object has no attribute '__hometown'
