@@ -1,50 +1,31 @@
 import heapq
 
-def convert_list_to_heap_and_print(input_list):
-    """
-    Converts a given list into a min-heap in-place and then prints the heap.
+# --- 1. Build the max-heap (your code) ---
+original_data = [1, 8, 3, 10, 5]
+arr = [-x for x in original_data]
+heapq.heapify(arr)
 
-    Args:
-        input_list: The list to be converted to a heap.
-    """
-    print(f"Original list: {input_list}")
+print(f"Initial (negated) max-heap: {arr}")
 
-    # Convert the list to a heap in-place.
-    # After this operation, input_list will satisfy the min-heap property.
-    heapq.heapify(input_list)
+# --- 2. Get the largest element (Peek) ---
+# The root arr[0] is -10. Negating it gives 10.
+max_val = -arr[0]
+print(f"Largest element is: {max_val}")  # Output: 10
 
-    print(f"List after heapify (now a min-heap): {input_list}")
+# --- 3. Push a new element ---
+new_val = 9
+print(f"Pushing {new_val}...")
+heapq.heappush(arr, -new_val)
+# arr is now [-10, -9, -3, -1, -5, -8]
+print(f"Heap after push: {arr}")
 
-    # To demonstrate the heap property, let's extract elements.
-    # Note: Printing the list directly after heapify will show it as an array
-    # that satisfies the heap property, but not necessarily fully sorted.
-    # To see the elements in sorted order, you need to extract them one by one.
+# --- 4. Pop the largest element ---
+# heappop(arr) returns -10. Negating it gives 10.
+popped_max = -heapq.heappop(arr)
+print(f"Popped element: {popped_max}")  # Output: 10
 
-    # print("\nExtracting elements one by one (will be in sorted order):")
-    # extracted_elements = []
-    # while input_list:
-    #     smallest = heapq.heappop(input_list)
-    #     extracted_elements.append(smallest)
-    #     print(f"Extracted: {smallest}, Remaining heap: {input_list}")
-
-    # print(f"\nAll elements extracted in sorted order: {extracted_elements}")
-
-
-# --- Test Cases ---
-my_list_1 = [4, 1, 7, 3, 8, 2, 6]
-convert_list_to_heap_and_print(my_list_1)
-
-print("\n" + "="*30 + "\n")
-
-my_list_2 = [9, 5, 1, 8, 2]
-convert_list_to_heap_and_print(my_list_2)
-
-print("\n" + "="*30 + "\n")
-
-my_list_3 = []
-convert_list_to_heap_and_print(my_list_3)
-
-print("\n" + "="*30 + "\n")
-
-my_list_4 = [5]
-convert_list_to_heap_and_print(my_list_4)
+# --- 5. See the new largest element ---
+# The new root arr[0] is -9. Negating it gives 9.
+next_max = -arr[0]
+print(f"New largest element is: {next_max}")  # Output: 9
+print(f"Final heap: {arr}")
