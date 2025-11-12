@@ -29,3 +29,6 @@ print(f"Popped element: {popped_max}")  # Output: 10
 next_max = -arr[0]
 print(f"New largest element is: {next_max}")  # Output: 9
 print(f"Final heap: {arr}")
+
+next_max = -arr[1]
+print(f"New largest element is: {next_max}") 
